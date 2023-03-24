@@ -49,14 +49,14 @@ spec:
             - name: grpc
               containerPort: 9000
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8000
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 8000
+#           livenessProbe:
+#             httpGet:
+#               path: /healthz
+#               port: 8000
+#           readinessProbe:
+#             httpGet:
+#               path: /healthz
+#               port: 8000
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.persistentVolume.enabled }}
